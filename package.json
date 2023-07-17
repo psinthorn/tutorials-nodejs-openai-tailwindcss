@@ -1,0 +1,34 @@
+{
+  "name": "tutorials-nodejs-openai-tailwindcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js index.html style.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psinthorn/tutorials-nodejs-openai-tailwindcss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psinthorn/tutorials-nodejs-openai-tailwindcss/issues"
+  },
+  "homepage": "https://github.com/psinthorn/tutorials-nodejs-openai-tailwindcss#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "openai": "^3.3.0",
+    "postcss": "^8.4.26",
+    "postcss-cli": "^10.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
