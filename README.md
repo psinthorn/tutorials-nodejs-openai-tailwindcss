@@ -36,26 +36,101 @@ npm install axios express nodemon openai
 
 ### เตรียม Folder Structure สำหรับโปรเจค
 สร้างโฟลเดอร์สำหรับโปรเจคนั้นจำทำการสร้างเพื่อเตรียมพร้อมสำหรับการขยายระบบได้ในอนาคตด้วย (Scalable) ซึ่งผมมองมีประโยชน์และควรเริ่มต้นทุกครั้งด้วยการเตรียมกาดรจัดการโฟเดอร์ให้เรียบร้อยนั้นเป็นเรื่องที่จะทำให้มองเห็นภาพโครงสร้างโปรเจคได้ง่ายขึ้นด้วย
-#### Folder structure และ file สำหรับโปรเจคที่ใช้ Nodejs
+#### สร้าง Folder และ file สำหรับโปรเจคที่ใช้ Nodejs 
 ```
+├── build  (or dist)
+│ 
 ├── controllers
 │   ├── openaiController.js
-├── routes 
-│   ├── openaiRoute.sj
 ├── public
-│   ├── css
+│   ├── styles
+        ├── style.css
+        ├── tailwind.css
 │   │   ├── **/*.css
 │   ├── images
+        ├── **/*.jpeg,png,svg
 │   ├── js
+        ├── main.js
 │   ├── index.html
-├── build  (or dist)
+├── routes 
+│   ├── openaiRoute.sj
+│ 
 ├── node_modules
+├── .env
 ├── package.json
 ├── package-lock.json 
 ├── postcss.config.js 
 └── index.js
 └── .gitignore
 ```
+
+### เริ่มต้นกับ Nodejs server ด้วย express framework
+1. สร้าง index.js ที่ root โปรเจคโฟลเดอร์และเพิ่มโค้ดด้านล่าง
+```
+const express = require('express');
+const path = require('path');
+const dotenv = require('dotenv');
+
+const srvPort = process.env.PORT || 8000; 
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+app.get('/', (req, res) => {
+    res.status(200).json({ msg: "hello Nodejs and OpenAi"})
+});
+
+app.listen(srvPort, () => {
+    console.log("server is up and running on port: ", srvPort);
+});
+```
+- เพิ่ม script "start" บน package.json ไฟล์เพื่อสั่งให้ server เริ่มทำงานและ monitor หากไฟล์ที่กำหนดมีการเปลี่ยนแปลงให้ระบบ ทำการ restart อัตโนมัติโดยในโปรเจคนี้ให้ monitor ไฟล์ต่างๆ ดังนี้ index.js index.html และ style.css (ใช้ nodemon module ในการ monotor การเปลี่ยนแปลงของไฟล์ที่กำหนด)
+  
+```
+"scripts": {
+    "start": "nodemon index.js index.html style.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+  },
+```
+
+
+เมื่อสร้าง index.js และเพิ่ม script "start" ใน package.json เสร็จแล้วให้ทดสอบด้วยการ run คำสั่ง start บน terminal ด้วยคำสั่งดังนี้
+```
+npm run start 
+หรือ
+ืnpm run
+``` 
+หากไม่ทีข้อผิดพลาดใดๆ ควรจะเห็นระบบแสดงข้อความบน terminal ตั้งนี้ ที่บรรทัดสุดท้ายของ terminal นั้นหมายความว่า nodejs server ทำงานปกติและพร้อมสำหรับการ implement feature อื่นเข้าไปที่ระบบแล้ว
+```
+server is up and running on port: 8000
+```
+หServer 
+
+### สร้างไฟล์ index.html สำรับหน้าเว็บเพจแรก
+สร้าาง index.html ไฟล์และเพิ่มข้อมูลภายในไฟล์เบื้องต้นดังนี้
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <title>OpenAiX | Nodejs + TailwindCss</title>
+</head>
+<body>
+    <div class="flex flex-col justify-center items-center overflow-hidden m-auto h-screen max-w-screen-lg ">
+        <h1 class="text-sm text-gray-700">hEllo Open Ai</h1>
+        <div>Power of Ai is testing here</div>
+    </div>
+</body>
+</html>
+```
+
+
 
 
 
