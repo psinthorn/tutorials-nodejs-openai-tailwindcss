@@ -36,5 +36,27 @@ npm install axios express nodemon openai
 
 ### เตรียม Folder Structure สำหรับโปรเจค
 สร้างโฟลเดอร์สำหรับโปรเจคนั้นจำทำการสร้างเพื่อเตรียมพร้อมสำหรับการขยายระบบได้ในอนาคตด้วย (Scalable) ซึ่งผมมองมีประโยชน์และควรเริ่มต้นทุกครั้งด้วยการเตรียมกาดรจัดการโฟเดอร์ให้เรียบร้อยนั้นเป็นเรื่องที่จะทำให้มองเห็นภาพโครงสร้างโปรเจคได้ง่ายขึ้นด้วย
+#### Folder structure และ file สำหรับโปรเจคที่ใช้ Nodejs
+```
+├── controllers
+│   ├── openaiController.js
+├── routes 
+│   ├── openaiRoute.sj
+├── public
+│   ├── css
+│   │   ├── **/*.css
+│   ├── images
+│   ├── js
+│   ├── index.html
+├── build  (or dist)
+├── node_modules
+├── package.json
+├── package-lock.json 
+├── postcss.config.js 
+└── index.js
+└── .gitignore
+```
+
+
 
  
