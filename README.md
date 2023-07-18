@@ -1,5 +1,7 @@
 # tutorials-nodejs-openai-tailwindcss
-How to use Openai with Nodejs and using tailwindcss as Css 
+## How to use Openai with Nodejs and using tailwindcss as Css 
+
+> เป็นโปรเจคที่จัดทำขึ้นเพื่อเป็นใช้เป็นแนวทางในการนำความสามารถของ OpenAi มาใช้ในโปรเจคที่เป็นส่วนตัว (Private use case) โดยเชื่อมต่อผ่าน API ที่ทาง OpenAi นั้นได้เปิดช่องทางเอาไว้ให้ได้ใช้บริการเบื้องต้นกันอยู่แล้วโดยมีทั้งแบบเสียค่าสมาชิกและแบบฟรีที่มีการจำกัดจำนวนครั้งของการเรียกใช้งาน ยังไงก็ต้องขอบคุณ OpenAi ที่เปิดให้ได้ทดลองใช้กันครับ https://www.openai.com
 
 ### เตรียมสิ่งต่างๆ ให้พร้อม
 #### สร้าง github Repository สำหรับโปรเจค
@@ -89,8 +91,9 @@ app.listen(srvPort, () => {
     console.log("server is up and running on port: ", srvPort);
 });
 ```
+
 > เพิ่ม script "start" บน package.json ไฟล์เพื่อสั่งให้ server เริ่มทำงานและ monitor > หากไฟล์ที่กำหนดมีการเปลี่ยนแปลงให้ระบบ ทำการ restart อัตโนมัติโดยในโปรเจคนี้ให้ monitor ไฟล์ต่างๆ ดังนี้ index.js index.html และ style.css (ใช้ nodemon module ในการ monotor การเปลี่ยนแปลงของไฟล์ที่กำหนด)
-  
+
 
 ```
 "scripts": {
@@ -101,6 +104,7 @@ app.listen(srvPort, () => {
 ```
 
 เมื่อสร้าง index.js และเพิ่ม script "start" ใน package.json เสร็จแล้วให้ทดสอบด้วยการ run คำสั่ง start บน terminal ด้วยคำสั่งดังนี้
+
 ```
 npm run start 
 หรือ
@@ -108,6 +112,7 @@ npm run
 ``` 
 
 หากไม่ทีข้อผิดพลาดใดๆ ควรจะเห็นระบบแสดงข้อความบน terminal ตั้งนี้ ที่บรรทัดสุดท้ายของ terminal นั้นหมายความว่า nodejs server ทำงานปกติและพร้อมสำหรับการ implement feature อื่นเข้าไปที่ระบบแล้ว
+
 ```
 server is up and running on port: 8000
 ```
@@ -132,6 +137,15 @@ server is up and running on port: 8000
 </body>
 </html>
 ```
+
+### Tailwindcss: เพิ่มประสิทธิภาพและการจัดการด้าน UX/UI ให้โปรเจคด้วยการติดตั้ง tailwindcss framwork 
+
+### OpenAi: เริ่มต้นใช้งาน OpenAi
+#### ลงทำเบียนเพื่อเริ่มต้นการใช้งานและสร้าง Openai API Key
+
+### .ENV: สร้างตัวแปรและเรียกใช้ตัวแปรใน .env อย่างไร
+
+### Controllers Routes และ Form 
 
 
 
