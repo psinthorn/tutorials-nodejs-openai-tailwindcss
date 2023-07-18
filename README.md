@@ -89,7 +89,7 @@ app.listen(srvPort, () => {
     console.log("server is up and running on port: ", srvPort);
 });
 ```
-- เพิ่ม script "start" บน package.json ไฟล์เพื่อสั่งให้ server เริ่มทำงานและ monitor หากไฟล์ที่กำหนดมีการเปลี่ยนแปลงให้ระบบ ทำการ restart อัตโนมัติโดยในโปรเจคนี้ให้ monitor ไฟล์ต่างๆ ดังนี้ index.js index.html และ style.css (ใช้ nodemon module ในการ monotor การเปลี่ยนแปลงของไฟล์ที่กำหนด)
+> เพิ่ม script "start" บน package.json ไฟล์เพื่อสั่งให้ server เริ่มทำงานและ monitor > หากไฟล์ที่กำหนดมีการเปลี่ยนแปลงให้ระบบ ทำการ restart อัตโนมัติโดยในโปรเจคนี้ให้ monitor ไฟล์ต่างๆ ดังนี้ index.js index.html และ style.css (ใช้ nodemon module ในการ monotor การเปลี่ยนแปลงของไฟล์ที่กำหนด)
   
 
 ```
