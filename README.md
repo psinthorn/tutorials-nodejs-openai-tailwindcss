@@ -66,6 +66,8 @@ npm install axios express nodemon openai
 
 ### เริ่มต้นกับ Nodejs server ด้วย express framework
 1. สร้าง index.js ที่ root โปรเจคโฟลเดอร์และเพิ่มโค้ดด้านล่าง
+
+
 ```
 const express = require('express');
 const path = require('path');
@@ -89,6 +91,7 @@ app.listen(srvPort, () => {
 ```
 - เพิ่ม script "start" บน package.json ไฟล์เพื่อสั่งให้ server เริ่มทำงานและ monitor หากไฟล์ที่กำหนดมีการเปลี่ยนแปลงให้ระบบ ทำการ restart อัตโนมัติโดยในโปรเจคนี้ให้ monitor ไฟล์ต่างๆ ดังนี้ index.js index.html และ style.css (ใช้ nodemon module ในการ monotor การเปลี่ยนแปลงของไฟล์ที่กำหนด)
   
+
 ```
 "scripts": {
     "start": "nodemon index.js index.html style.css",
@@ -97,18 +100,18 @@ app.listen(srvPort, () => {
   },
 ```
 
-
 เมื่อสร้าง index.js และเพิ่ม script "start" ใน package.json เสร็จแล้วให้ทดสอบด้วยการ run คำสั่ง start บน terminal ด้วยคำสั่งดังนี้
 ```
 npm run start 
 หรือ
-ืnpm run
+npm run
 ``` 
+
 หากไม่ทีข้อผิดพลาดใดๆ ควรจะเห็นระบบแสดงข้อความบน terminal ตั้งนี้ ที่บรรทัดสุดท้ายของ terminal นั้นหมายความว่า nodejs server ทำงานปกติและพร้อมสำหรับการ implement feature อื่นเข้าไปที่ระบบแล้ว
 ```
 server is up and running on port: 8000
 ```
-หServer 
+
 
 ### สร้างไฟล์ index.html สำรับหน้าเว็บเพจแรก
 สร้าาง index.html ไฟล์และเพิ่มข้อมูลภายในไฟล์เบื้องต้นดังนี้
