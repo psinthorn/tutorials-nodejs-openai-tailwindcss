@@ -1,5 +1,7 @@
 # tutorials-nodejs-openai-tailwindcss
-How to use Openai with Nodejs and using tailwindcss as Css 
+## How to use Openai with Nodejs and using tailwindcss as Css 
+
+> เป็นโปรเจคที่จัดทำขึ้นเพื่อเป็นใช้เป็นแนวทางในการนำความสามารถของ OpenAi มาใช้ในโปรเจคที่เป็นส่วนตัว (Private use case) โดยเชื่อมต่อผ่าน API ที่ทาง OpenAi นั้นได้เปิดช่องทางเอาไว้ให้ได้ใช้บริการเบื้องต้นกันอยู่แล้วโดยมีทั้งแบบเสียค่าสมาชิกและแบบฟรีที่มีการจำกัดจำนวนครั้งของการเรียกใช้งาน ยังไงก็ต้องขอบคุณ OpenAi ที่เปิดให้ได้ทดลองใช้กันครับ https://www.openai.com
 
 ### เตรียมสิ่งต่างๆ ให้พร้อม
 #### สร้าง github Repository สำหรับโปรเจค
