@@ -509,9 +509,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-gray-700 {
   --tw-text-opacity: 1;
